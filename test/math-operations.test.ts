@@ -13,4 +13,10 @@ describe('MathOperations Class testing', () => {
     expect(mathOps.add(-3, 3)).toBe(0)
   })
 
+  describe('Math operation class testing ', () => {
+    test('should squaring correctly positive number', () => {
+      mathOps = new MathOperations()
+      expect(mathOps.sqrt(2)).toBe(4)
+    })
+  })
 })
