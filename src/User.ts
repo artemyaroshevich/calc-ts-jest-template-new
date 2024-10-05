@@ -1,16 +1,18 @@
-import { name } from 'ts-jest/dist/transformers/hoist-jest'
+import {name} from 'ts-jest/dist/transformers/hoist-jest'
 
 export class User {
-  name: string
-  surname: string
-  phone: string
-  address: string
-  consentGiven: undefined | boolean
+    name: string
+    surname: string
+    phone: string
+    address: string
+    consentGiven: undefined | boolean
+    age: number
 
-  constructor(name: string, surname: string, phone: string, address: string) {
-    this.name = name
-    this.surname = surname
-    this.phone = phone
-    this.address = address
-  }
+    constructor(name: string, surname: string, phone: string, address: string, age: number) {
+        this.name = name
+        this.surname = surname
+        this.phone = phone
+        this.address = address
+        this.age = age
+    }
 }
