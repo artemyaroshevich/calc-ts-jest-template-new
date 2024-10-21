@@ -7,7 +7,7 @@ test('check password length', () => {
     expect(Number(passwordLengthToNumber)).toBe(9)
 })
 
-test('check password length max', () => {
+test('check password length max ', () => {
     let passwordLength = calculatePasswordStrength('0123456789')
     let passwordLengthToNumber = String(passwordLength).length
     expect(Number(passwordLengthToNumber)).toBeLessThan(12)
