@@ -5,29 +5,29 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+    pull request:
+      branches:
+        - main
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+      jobs:
+        test:
+          runs-on: ubuntu-latest
 
-    steps:
-      # Checkout the repository
-      - name: Checkout code
-        uses: actions/checkout@v3
+          steps:
+            # Checkout the repository
+            - name: Checkout code
+              uses: actions/checkout@v3
 
-      # Set up Node.js environment
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
+              # Set up Node.js environment
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: '18.x'
 
-      # Install dependencies
-      - name: Install dependencies
-        run: npm install
+              # Install dependencies
+            - name: Install dependencies
+              run: npm install
 
-      # Run tests
-      - name: Run tests
-        run: npm test
+              # Run tests
+            - name: Run tests
+              run: npx jest

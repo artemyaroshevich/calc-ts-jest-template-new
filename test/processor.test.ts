@@ -3,9 +3,10 @@ import { Processor } from '../src/Processor'
 
 let user: User
 let processor: Processor
+let userMoreThenEight:User
 
 beforeEach(() => {
-  user = new User('Alex', 'Ott', '554455', 'Eesti')
+  user = new User('Alex', 'Ott', '554455', 'Eesti',12)
   processor = new Processor()
 })
 
@@ -25,4 +26,17 @@ test('check processor verify', () => {
 
 test('negative check consent', () => {
   expect(processor.checkConsent(user)).toBeFalsy()
+})
+
+test('check adult', () => {
+  expect(processor.checkAdult(user)).toBeFalsy()
+})
+
+test('check adult more than 18',() => {
+  userMoreThenEight = new User('Alex', 'Ott', '554455', 'Eesti',19)
+  expect(processor.checkAdult(userMoreThenEight)).toBeTruthy()
+})
+
+test('check revokeConsent', () => {
+  expect(processor.revokeConsent(user)).toBeFalsy()
 })
